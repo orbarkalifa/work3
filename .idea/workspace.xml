@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79c8104-6a72-475b-b6a3-aff3ec8f0bd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/work3_318279429_316410885.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3/CucumbersThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/CucumbersThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3/SlicerMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/SlicerMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3/SlicerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/SlicerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3/TomatoesThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/TomatoesThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2bs6wzH0NgZrmt8f3HVbroCkwkN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -32,9 +31,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "q3",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -47,6 +47,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\orbar\IdeaProjects\work3_318279429_316410885\src\assig3" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -1,4 +1,4 @@
-package assig3_3;
+package assig3;
 
 public class SlicerMachine {
 	
@@ -8,9 +8,14 @@ public class SlicerMachine {
 	
 	final int cucumbersNeededForOneSalad = 3;
 	final int tomatoesNeededForOneSalad = 2;
-	
+	final int totalNumOfSaladsToPrepare;
+
+	public SlicerMachine(int totalNumOfSaladsToPrepare) {
+		this.totalNumOfSaladsToPrepare = totalNumOfSaladsToPrepare;
+	}
+
 	// add one cucumber into the slicer chamber
-	void addOneCucumber() {
+	public synchronized void addOneCucumber() {
 		if (numOfCucumbers < cucumbersNeededForOneSalad) {
 			System.out.println("adding one cucumber to the machine");
 			numOfCucumbers++;
@@ -18,7 +23,7 @@ public class SlicerMachine {
 	}
 
 	// add one tomato into the slicer chamber
-	void addOneTomato() {
+	public synchronized void addOneTomato() {
 		if (numOfTomatoes < tomatoesNeededForOneSalad) {
 			System.out.println("adding one tomato to the machine");
 			numOfTomatoes++;
@@ -27,7 +32,7 @@ public class SlicerMachine {
 	
 	// if there are enough vegetables in the slicer
 	// chamber, make another salad
-	void sliceVegetables() {
+	public synchronized void sliceVegetables() {
 		if ((numOfCucumbers >= cucumbersNeededForOneSalad) && (numOfTomatoes >= tomatoesNeededForOneSalad)) {
 			makeNewSalad();
 		}
@@ -44,5 +49,7 @@ public class SlicerMachine {
 	int getNumOfPreparedSalads() {
 		return numOfPreparedSalads;
 	}
-
+	boolean isDone() {
+		return numOfPreparedSalads == totalNumOfSaladsToPrepare;
+	}
 }
