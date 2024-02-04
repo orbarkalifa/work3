@@ -1,4 +1,4 @@
-package assign3_2;
+package assig3_2;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,4 +27,5 @@ public class Main {
         else
             System.out.println("Tie! (" + g1.getScore() + "-" + g2.getScore() + ")");
     }
+    
 }

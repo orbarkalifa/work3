@@ -1,4 +1,4 @@
-package assign3_2;
+package assig3_2;
 
 public class GamePlay {
 

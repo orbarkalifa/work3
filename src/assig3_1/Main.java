@@ -1,4 +1,4 @@
-package assign3_1;
+package assig3_1;
 
 class T1 extends Thread {
     boolean cDone = false;
