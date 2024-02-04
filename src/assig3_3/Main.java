@@ -1,4 +1,4 @@
-package assig3;
+package assig3_3;
 
 import java.util.Scanner;
 
