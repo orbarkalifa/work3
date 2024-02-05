@@ -1,69 +1,76 @@
 package assig3_1;
 
-class T1 extends Thread {
-    boolean cDone = false;
 
-    public void run(){
-        while(true){
-            // A
-            while(!cDone){
+class T1 implements Runnable {
+
+    @Override
+    public void run() {
+        while (true) {
+            while (Main.turn != 1){
                 try {
                     wait();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            System.out.println("A");
-            notifyAll();
+
+            System.out.print(" A ");
+            Main.turn = 2;
 
         }
     }
 }
-class T2 extends Thread {
-    public boolean aDone = false;
-    public int n=0;
-    public void run(){
+
+class T2 implements Runnable {
+    @Override
+    public void run() {
         while(true){
-            // B
-            while(!aDone){
+            while (Main.turn == 1 || Main.turn == 4){
                 try {
                     wait();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            System.out.println("B");
-
-            notifyAll();
+            System.out.print(" B ");
+                Main.turn = 3;
 
         }
     }
 }
-class T3 extends Thread {
-    boolean bDone = false;
-    public void run(){
-        while(true){
-            // C
-            while(!bDone){
+class T3 implements Runnable {
+    @Override
+    public void run() {
+        while (true) {
+            while (Main.turn != 3){
                 try {
                     wait();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            System.out.println("C");
+                Main.turn = 4;
+                System.out.print(" C ");
+                Main.turn = 1;
 
-            notifyAll();
 
         }
     }
-
 }
 
 public class Main {
+
+    public static Integer turn = 1;
+
+
     public static void main(String[] args) {
-
-        T1 t1 = new T1();
-        T2 t2 = new T2();
-        T3 t3 = new T3();
-
+        Thread t1 = new Thread(new T1());
+        Thread t2 = new Thread(new T2());
+        Thread t3 = new Thread(new T3());
         t1.start();
         t2.start();
         t3.start();
+
 
 
     }
