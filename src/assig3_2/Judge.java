@@ -1,6 +1,9 @@
+// Or Bar Califa 318279429
+// Daniel Fradkin 316410885
+// Git: https://github.com/orbarkalifa/work3.git
+
 package assig3_2;
 
-import static java.lang.Thread.sleep;
 
 public class Judge extends Thread{
 
@@ -10,7 +13,7 @@ public class Judge extends Thread{
 
     }
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+        while (!isInterrupted()) {
             game.makeCoinAvail(true);
             try {
                 sleep(1000);

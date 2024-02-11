@@ -1,3 +1,7 @@
+// Or Bar Califa 318279429
+// Daniel Fradkin 316410885
+// Git: https://github.com/orbarkalifa/work3.git
+
 package assig3_3;
 
 public class SlicerMachine {
@@ -45,10 +49,7 @@ public class SlicerMachine {
 		numOfTomatoes = numOfTomatoes - tomatoesNeededForOneSalad;
 		numOfCucumbers = numOfCucumbers - cucumbersNeededForOneSalad;
 	}	
-	
-	int getNumOfPreparedSalads() {
-		return numOfPreparedSalads;
-	}
+
 	boolean isDone() {
 		return numOfPreparedSalads == totalNumOfSaladsToPrepare;
 	}

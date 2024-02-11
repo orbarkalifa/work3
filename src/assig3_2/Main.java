@@ -1,3 +1,7 @@
+// Or Bar Califa 318279429
+// Daniel Fradkin 316410885
+// Git: https://github.com/orbarkalifa/work3.git
+
 package assig3_2;
 
 public class Main {
@@ -15,7 +19,6 @@ public class Main {
             g1.join(); // Wait for g1 to finish
             g2.join(); // Wait for g2 to finish
             judge.interrupt(); // Stop the judge after players finish
-            judge.join(); // Wait for the judge to finish
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

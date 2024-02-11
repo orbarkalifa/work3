@@ -1,3 +1,7 @@
+// Or Bar Califa 318279429
+// Daniel Fradkin 316410885
+// Git: https://github.com/orbarkalifa/work3.git
+
 package assig3_2;
 
 public class Gamer extends Thread{
@@ -9,8 +13,8 @@ public class Gamer extends Thread{
         this.game = game;
     }
 
-    public synchronized void play(){
-        while(!Thread.currentThread().isInterrupted() && game.getNumOfRounds() < 10){
+    public void play(){
+        while(!isInterrupted() && game.getNumOfRounds() < 10){
             if (game.flipCoin()) goodFlipsCounter++;
             try {
                 sleep(1000);

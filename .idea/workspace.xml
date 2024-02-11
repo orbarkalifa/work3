@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e79c8104-6a72-475b-b6a3-aff3ec8f0bd2" name="Changes" comment="minor fixes">
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+    <list default="true" id="e79c8104-6a72-475b-b6a3-aff3ec8f0bd2" name="Changes" comment="working q3">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05-Feb-24_20_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05-Feb-24_20_54__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05-Feb-24_20_54__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05-Feb-24_20_54__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_29__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_29__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_29__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11-Feb-24_10_34__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assig3_1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_2/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_2/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_2/Gamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_2/Gamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_2/Judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_2/Judge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/CucumbersThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/CucumbersThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/SlicerMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/SlicerMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/SlicerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/SlicerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/TomatoesThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/TomatoesThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,27 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.OrderedThreads.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "q1",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderedThreads.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="assig3_1" />
@@ -82,6 +95,8 @@
       <workItem from="1706991685055" duration="383000" />
       <workItem from="1707136282476" duration="15000" />
       <workItem from="1707155722357" duration="1059000" />
+      <workItem from="1707654917884" duration="4000" />
+      <workItem from="1707678757858" duration="254000" />
     </task>
     <servers />
   </component>

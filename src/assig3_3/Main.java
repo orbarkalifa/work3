@@ -1,3 +1,7 @@
+// Or Bar Califa 318279429
+// Daniel Fradkin 316410885
+// Git: https://github.com/orbarkalifa/work3.git
+
 package assig3_3;
 
 import java.util.Scanner;
