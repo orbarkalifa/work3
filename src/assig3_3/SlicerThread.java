@@ -11,7 +11,7 @@ public class SlicerThread extends Thread {
     @Override
     public void run() {
 
-        while (true) {
+        while (!isInterrupted()) {
             synchronized (machine) {
                 while (machine.numOfTomatoes < 2 || machine.numOfCucumbers < 3) {
                     try {

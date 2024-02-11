@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e79c8104-6a72-475b-b6a3-aff3ec8f0bd2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assig3/CucumbersThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/CucumbersThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assig3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assig3/SlicerMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/SlicerMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assig3/SlicerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/SlicerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assig3/TomatoesThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3/TomatoesThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/CucumbersThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/CucumbersThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/SlicerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/SlicerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assig3_3/TomatoesThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assig3_3/TomatoesThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +16,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="q2" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "orbarkalifa"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8d1a510c-131a-431a-a6a7-01ac75a81ceb" />
+        <option name="url" value="https://github.com/orbarkalifa/work3.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -29,24 +46,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "q3",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;q3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\orbar\IdeaProjects\work3_318279429_316410885\src\assig3" />

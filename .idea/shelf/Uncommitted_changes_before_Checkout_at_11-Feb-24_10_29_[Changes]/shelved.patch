@@ -1,0 +1,108 @@
+Index: src/assig3_3/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_3;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n\r\n\tpublic static void main(String[] args) {\r\n\t\tSystem.out.println(\"Please Type How Many Salads To Prepare:\");\r\n\t\tScanner scan = new Scanner(System.in);\r\n\t\tfinal int numOfSaladsToPrepare = scan.nextInt();\r\n\t\tSystem.out.println(\"Preparing \" + numOfSaladsToPrepare + \" Salads...\");\r\n\r\n\t\t// YOUR CODE HERE: use threads to prepare N salads (as the user requested)\r\n\r\n\t\tSlicerMachine machine = new SlicerMachine(numOfSaladsToPrepare);\r\n\t\tSlicerThread slicer = new SlicerThread(machine);\r\n\t\tTomatoesThread tomatoes = new TomatoesThread(slicer);\r\n\t\tCucumbersThread cucumbers = new CucumbersThread(slicer);\r\n\t\ttomatoes.start();\r\n\t\tcucumbers.start();\r\n\t\tslicer.start();\r\n\r\n\r\n\t\ttry {\r\n\t\t\twhile (!machine.isDone()) {\r\n\t\t\t\tThread.sleep(100);\r\n\t\t\t}\r\n\r\n\t\t\t// Interrupt all threads when the desired number of salads have been prepared\r\n\t\t\ttomatoes.interrupt();\r\n\t\t\tcucumbers.interrupt();\r\n\t\t\tslicer.interrupt();\r\n\r\n\t\t\t// Wait for threads to finish\r\n\t\t\ttomatoes.join();\r\n\t\t\tcucumbers.join();\r\n\t\t\tslicer.join();\r\n\t\t} catch (InterruptedException e) {\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\r\n\t\tSystem.out.println(\"Done\");\r\n\t\tscan.close();\r\n\t}\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/assig3_3/Main.java b/src/assig3_3/Main.java
+--- a/src/assig3_3/Main.java	
++++ b/src/assig3_3/Main.java	
+@@ -22,25 +22,32 @@
+ 
+ 
+ 		try {
++
++
+ 			while (!machine.isDone()) {
+ 				Thread.sleep(100);
+ 			}
+ 
+-			// Interrupt all threads when the desired number of salads have been prepared
+-			tomatoes.interrupt();
+-			cucumbers.interrupt();
+-			slicer.interrupt();
+ 
+ 			// Wait for threads to finish
+ 			tomatoes.join();
+ 			cucumbers.join();
+ 			slicer.join();
++
++			// Interrupt all threads when the desired number of salads have been prepared
++			tomatoes.interrupt();
++			cucumbers.interrupt();
++			slicer.interrupt();
++
++
++
+ 		} catch (InterruptedException e) {
+ 			e.printStackTrace();
+ 		}
+ 
+ 		System.out.println("Done");
+ 		scan.close();
++
+ 	}
+ 
+ }
+Index: src/assig3_3/SlicerThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_3;\r\n\r\npublic class SlicerThread extends Thread {\r\n\r\n    final SlicerMachine machine;\r\n\r\n    public SlicerThread(SlicerMachine machine) {\r\n        this.machine = machine;\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n\r\n        while (true) {\r\n            synchronized (machine) {\r\n                while (machine.numOfTomatoes < 2 || machine.numOfCucumbers < 3) {\r\n                    try {\r\n                        System.out.println(\"Slicer is waiting for veggies...\");\r\n                        machine.wait();\r\n                    } catch (InterruptedException e) {\r\n                        System.out.println(\"Slicer interrupted. exiting...\");\r\n                    }\r\n                }\r\n                if (machine.isDone()) {\r\n                    return;\r\n                }\r\n                machine.sliceVegetables();\r\n                machine.notifyAll();\r\n\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/assig3_3/SlicerThread.java b/src/assig3_3/SlicerThread.java
+--- a/src/assig3_3/SlicerThread.java	
++++ b/src/assig3_3/SlicerThread.java	
+@@ -11,8 +11,9 @@
+     @Override
+     public void run() {
+ 
+-        while (true) {
++        while (!isInterrupted()) {
+             synchronized (machine) {
++
+                 while (machine.numOfTomatoes < 2 || machine.numOfCucumbers < 3) {
+                     try {
+                         System.out.println("Slicer is waiting for veggies...");
+@@ -22,7 +23,9 @@
+                     }
+                 }
+                 if (machine.isDone()) {
++                    interrupt();
+                     return;
++
+                 }
+                 machine.sliceVegetables();
+                 machine.notifyAll();
+Index: src/assig3_3/TomatoesThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_3;\r\n\r\npublic class TomatoesThread extends Thread {\r\n    final SlicerThread slicer;\r\n    public TomatoesThread(SlicerThread slicer){\r\n        this.slicer = slicer;\r\n    }\r\n    @Override\r\n    public void run() {\r\n        while (true) {\r\n            synchronized (slicer.machine) {\r\n                while (slicer.machine.numOfTomatoes >= slicer.machine.tomatoesNeededForOneSalad) {\r\n                    try {\r\n                        slicer.machine.wait();\r\n                    } catch (InterruptedException e) {\r\n                        System.out.println(\"tomatoes interrupted. exiting...\");\r\n                    }\r\n                }\r\n                slicer.machine.addOneTomato();\r\n                slicer.machine.notifyAll();\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/assig3_3/TomatoesThread.java b/src/assig3_3/TomatoesThread.java
+--- a/src/assig3_3/TomatoesThread.java	
++++ b/src/assig3_3/TomatoesThread.java	
+@@ -7,7 +7,7 @@
+     }
+     @Override
+     public void run() {
+-        while (true) {
++        while (!isInterrupted()) {
+             synchronized (slicer.machine) {
+                 while (slicer.machine.numOfTomatoes >= slicer.machine.tomatoesNeededForOneSalad) {
+                     try {
+Index: src/assig3_3/CucumbersThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_3;\r\n\r\npublic class CucumbersThread extends Thread {\r\n    final SlicerThread slicer;\r\n    public CucumbersThread(SlicerThread slicer){\r\n        this.slicer = slicer;\r\n    }\r\n    @Override\r\n    public void run() {\r\n        while (true) {\r\n            synchronized (slicer.machine) {\r\n                while (slicer.machine.numOfCucumbers >= slicer.machine.cucumbersNeededForOneSalad) {\r\n                    try {\r\n                        slicer.machine.wait();\r\n                    } catch (InterruptedException e) {\r\n                        System.out.println(\"cucumbers interrupted. exiting...\");\r\n                    }\r\n                }\r\n                slicer.machine.addOneCucumber();\r\n                slicer.machine.notifyAll();\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/assig3_3/CucumbersThread.java b/src/assig3_3/CucumbersThread.java
+--- a/src/assig3_3/CucumbersThread.java	
++++ b/src/assig3_3/CucumbersThread.java	
+@@ -7,7 +7,7 @@
+     }
+     @Override
+     public void run() {
+-        while (true) {
++        while (!isInterrupted()) {
+             synchronized (slicer.machine) {
+                 while (slicer.machine.numOfCucumbers >= slicer.machine.cucumbersNeededForOneSalad) {
+                     try {
