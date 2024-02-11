@@ -1,0 +1,44 @@
+Index: src/assig3_2/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_2;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        GamePlay game = new GamePlay();\r\n        Gamer g1 = new Gamer(game);\r\n        Gamer g2 = new Gamer(game);\r\n        Judge judge = new Judge(game);\r\n        judge.start();\r\n\r\n        g1.start();\r\n        g2.start();\r\n\r\n        try {\r\n            g1.join(); // Wait for g1 to finish\r\n            g2.join(); // Wait for g2 to finish\r\n            judge.interrupt(); // Stop the judge after players finish\r\n            judge.join(); // Wait for the judge to finish\r\n        } catch (InterruptedException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        if (g1.getScore() > g2.getScore())\r\n            System.out.println(\"Player 1 wins (\" + g1.getScore() + \"-\" + g2.getScore() + \")\");\r\n        else if (g1.getScore() < g2.getScore())\r\n            System.out.println(\"Player 2 wins (\" + g2.getScore() + \"-\" + g1.getScore() + \")\");\r\n        else\r\n            System.out.println(\"Tie! (\" + g1.getScore() + \"-\" + g2.getScore() + \")\");\r\n    }\r\n    \r\n}\r\n
+===================================================================
+diff --git a/src/assig3_2/Main.java b/src/assig3_2/Main.java
+--- a/src/assig3_2/Main.java	
++++ b/src/assig3_2/Main.java	
+@@ -6,6 +6,7 @@
+         Gamer g1 = new Gamer(game);
+         Gamer g2 = new Gamer(game);
+         Judge judge = new Judge(game);
++
+         judge.start();
+ 
+         g1.start();
+Index: src/assig3_2/GamePlay.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package assig3_2;\r\n\r\npublic class GamePlay {\r\n\r\n    public boolean coin_available_ = false;\r\n    public int rounds_counter = 0;\r\n    public synchronized void makeCoinAvail(boolean val){\r\n        coin_available_ = val;\r\n        if (coin_available_) notifyAll();\r\n\r\n    }\r\n\r\n    public synchronized boolean flipCoin(){\r\n        while (!coin_available_) {\r\n            try {\r\n                System.out.println(Thread.currentThread().getName() + \" is waiting for coin...\");\r\n                wait();\r\n\r\n            } catch (InterruptedException e) {\r\n                System.out.println(\"Thread interrupted, exiting...\");\r\n                return false;\r\n            }\r\n        }\r\n\r\n        System.out.println(Thread.currentThread().getName() + \" is flipping coin...\");\r\n        makeCoinAvail(false);\r\n        int toss = (int) Math.round(Math.random());\r\n        makeCoinAvail(true);\r\n        rounds_counter++;\r\n        System.out.println(rounds_counter + \" tosses so far\");\r\n\r\n        return (toss==1);\r\n\r\n    }\r\n\r\n    public int getNumOfRounds(){\r\n        return rounds_counter;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/assig3_2/GamePlay.java b/src/assig3_2/GamePlay.java
+--- a/src/assig3_2/GamePlay.java	
++++ b/src/assig3_2/GamePlay.java	
+@@ -2,7 +2,7 @@
+ 
+ public class GamePlay {
+ 
+-    public boolean coin_available_ = false;
++    public boolean coin_available_ = true;
+     public int rounds_counter = 0;
+     public synchronized void makeCoinAvail(boolean val){
+         coin_available_ = val;
+@@ -21,9 +21,8 @@
+                 return false;
+             }
+         }
+-
+-        System.out.println(Thread.currentThread().getName() + " is flipping coin...");
+         makeCoinAvail(false);
++        System.out.println(Thread.currentThread().getName() + " is flipping coin...");
+         int toss = (int) Math.round(Math.random());
+         makeCoinAvail(true);
+         rounds_counter++;
